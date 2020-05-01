@@ -25,6 +25,22 @@ export default function App() {
   return (
     <div className="App">
       <Nav />
+      <button
+        onClick={() =>
+          setCards(
+            cards.concat({
+              title: "OMG, did that just happen?",
+              list: "todo",
+              added: Date.now(),
+              id: Math.random(),
+              color: "lightblue",
+              assignedTo: ["jofh"],
+            })
+          )
+        }
+      >
+        Awesome
+      </button>
       <Main cards={cards} />
     </div>
   );
