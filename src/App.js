@@ -25,7 +25,7 @@ export default function App() {
   return (
     <div className="App">
       <Nav />
-      <button
+      {/*<button
         onClick={() =>
           setCards(
             cards.concat({
@@ -39,8 +39,8 @@ export default function App() {
           )
         }
       >
-        Awesome
-      </button>
+        
+      </button>*/}
       <Main cards={cards} />
     </div>
   );
