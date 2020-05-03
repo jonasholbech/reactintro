@@ -8,7 +8,7 @@ export default function List(props) {
     <section>
       <h2>{props.header}</h2>
       <ul>{cards}</ul>
-      <Form />
+      <Form onFormSubmit={props.onFormSubmit} />
     </section>
   );
 }
