@@ -36,6 +36,21 @@ export default function App() {
     );
   }
 
+  function onCardMove(id, whereTo) {
+    console.log(id, whereTo);
+    const nextCards = cards.map((card) => {
+      if (card.id === id) {
+        console.log("match");
+        card.list = whereTo;
+      }
+      return card;
+    });
+    setCards(nextCards);
+  }
+  function onCardDelete(id) {
+    const nextCards = cards.filter((card) => card.id !== id);
+    setCards(nextCards);
+  }
   return (
     <div className="App">
       <Nav />
@@ -55,7 +70,12 @@ export default function App() {
       >
         
       </button>*/}
-      <Main onFormSubmit={onFormSubmit} cards={cards} />
+      <Main
+        onCardDelete={onCardDelete}
+        onCardMove={onCardMove}
+        onFormSubmit={onFormSubmit}
+        cards={cards}
+      />
     </div>
   );
 }
