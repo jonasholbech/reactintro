@@ -5,6 +5,7 @@ function Dumb(props) {
 }
 export default function Counter(props) {
   const [count, setCount] = useState(0);
+
   function update(e) {
     setCount(count + 1);
   }
