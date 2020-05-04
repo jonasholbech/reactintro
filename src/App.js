@@ -1,14 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Nav from "./components/Nav";
 import Main from "./components/Main";
 
 export default function App() {
-  const [cards, setCards] = useState([
-    {
+  const [cards, setCards] = useState([]);
+
+  useEffect(() => {
+    fetch("https://frontendspring20-9cc3.restdb.io/rest/kanban", {
+      method: "get",
+      headers: {
+        "Content-Type": "application/json; charset=utf-8",
+        "x-apikey": "5e90ac94111788414066c8d9",
+        "cache-control": "no-cache",
+      },
+    })
+      .then((e) => e.json())
+      .then((data) => setCards(data));
+  }, []);
+  /*
+{
       title: "Make it dynamic",
       list: "todo",
       added: 1588055291061,
-      id: 1,
+      _id: 1,
       color: "hotpink",
       assignedTo: ["jofh"],
     },
@@ -16,21 +30,20 @@ export default function App() {
       title: "Make it dynamic",
       list: "todo",
       added: 1588055091061,
-      id: 2,
+      _id: 2,
       color: "lightblue",
       assignedTo: ["jofh", "davi"],
     },
-  ]);
-
+*/
   function onFormSubmit(data) {
     console.log("form submitted", data);
     setCards(cards.concat(data));
   }
 
-  function onCardMove(id, whereTo) {
-    console.log(id, whereTo);
+  function onCardMove(_id, whereTo) {
+    console.log(_id, whereTo);
     const nextCards = cards.map((card) => {
-      if (card.id === id) {
+      if (card._id === _id) {
         console.log("match");
         card.list = whereTo;
       }
@@ -38,8 +51,8 @@ export default function App() {
     });
     setCards(nextCards);
   }
-  function onCardDelete(id) {
-    const nextCards = cards.filter((card) => card.id !== id);
+  function onCardDelete(_id) {
+    const nextCards = cards.filter((card) => card._id !== _id);
     setCards(nextCards);
   }
   return (

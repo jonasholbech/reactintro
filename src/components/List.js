@@ -7,7 +7,7 @@ export default function List(props) {
     <Card
       onCardDelete={props.onCardDelete}
       onCardMove={props.onCardMove}
-      key={card.id}
+      key={card._id}
       {...card}
     />
   ));

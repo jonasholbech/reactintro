@@ -3,10 +3,10 @@ import Button from "./Button";
 export default function Card(props) {
   console.log(props);
   function onDelete() {
-    props.onCardDelete(props.id);
+    props.onCardDelete(props._id);
   }
   function onMove(where) {
-    props.onCardMove(props.id, where);
+    props.onCardMove(props._id, where);
   }
   return (
     <li>
