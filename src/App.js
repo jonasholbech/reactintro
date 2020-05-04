@@ -24,16 +24,7 @@ export default function App() {
 
   function onFormSubmit(data) {
     console.log("form submitted", data);
-    setCards(
-      cards.concat({
-        title: "OMG, did that just happen?",
-        list: "todo",
-        added: Date.now(),
-        id: Math.random(),
-        color: "lightblue",
-        assignedTo: ["jofh"],
-      })
-    );
+    setCards(cards.concat(data));
   }
 
   function onCardMove(id, whereTo) {
