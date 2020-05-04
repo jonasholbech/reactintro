@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import styles from "./Form.module.css";
 
 export default function Form(props) {
   const [title, setTitle] = useState("");
@@ -23,12 +24,22 @@ export default function Form(props) {
   function colorChanged(e) {
     setColor(e.target.value);
   }
-
+  const inputStyle = {
+    borderColor: title.length > 0 ? "green" : "red",
+    borderWidth: "2px",
+    borderStyle: "solid",
+  };
   return (
-    <form onSubmit={submit}>
+    <form className={styles.cardForm} onSubmit={submit}>
       <label>
         Title
-        <input type="text" onChange={titleChanged} name="title" value={title} />
+        <input
+          style={inputStyle}
+          type="text"
+          onChange={titleChanged}
+          name="title"
+          value={title}
+        />
       </label>
       <label>
         Color
