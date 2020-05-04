@@ -74,6 +74,7 @@ export default function App() {
       >
         
       </button>*/}
+      {cards.length === 0 && <h2>Loading</h2>}
       <Main
         onCardDelete={onCardDelete}
         onCardMove={onCardMove}

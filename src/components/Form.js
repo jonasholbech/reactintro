@@ -39,7 +39,7 @@ export default function Form(props) {
           value={color}
         />
       </label>
-      <input type="submit" value="Save" />
+      <input disabled={title.length === 0} type="submit" value="Save" />
     </form>
   );
 }
