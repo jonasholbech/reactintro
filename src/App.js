@@ -39,7 +39,12 @@ export default function App() {
   }
   return (
     <div className="App">
-      <Nav />
+      <Nav>
+        <a href="#">Home</a>
+        <a href="#">Home</a>
+        <a href="#">Home</a>
+        <a href="#">Home</a>
+      </Nav>
 
       {cards.length === 0 && <h2>Loading</h2>}
       <Main

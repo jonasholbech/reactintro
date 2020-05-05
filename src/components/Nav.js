@@ -1,10 +1,5 @@
 import React from "react";
-import Counter from "./Counter";
 
-export default function Nav() {
-  return (
-    <nav>
-      Nav <Counter />
-    </nav>
-  );
+export default function Nav(props) {
+  return <nav>{props.children}</nav>;
 }
