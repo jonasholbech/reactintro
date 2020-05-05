@@ -1,4 +1,6 @@
 import React from "react";
+import Panel from "muicss/lib/react/panel";
+
 import Card from "./Card";
 import Form from "./Form";
 
@@ -12,10 +14,10 @@ export default function List(props) {
     />
   ));
   return (
-    <section>
+    <Panel>
       <h2>{props.header}</h2>
       <ul>{cards}</ul>
       <Form onFormSubmit={props.onFormSubmit} />
-    </section>
+    </Panel>
   );
 }

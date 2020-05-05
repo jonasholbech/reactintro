@@ -15,12 +15,17 @@ code {
 .App {
   display: grid;
   grid-template-columns: 1fr 3fr;
+  margin-top: 1rem;
 }
-nav {
-  background: hotpink;
-}
+
 main {
-  background: lightblue;
   display: grid;
+  gap: 1rem;
   grid-template-columns: 1fr 1fr 1fr;
+}
+main li,
+main ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
