@@ -1,5 +1,6 @@
 import React from "react";
-import Button from "./Button";
+import Button from "muicss/lib/react/button";
+
 export default function Card(props) {
   console.log(props);
   function onDelete() {
@@ -15,11 +16,19 @@ export default function Card(props) {
     <li>
       <h3>{props.title}</h3>
       <p style={style}>{props.color}</p>
-      <Button />
-      <button onClick={onDelete}>Delete Me</button>
-      <button onClick={() => onMove("todo")}>Move to ToDO</button>
-      <button onClick={() => onMove("doing")}>Move to Doing</button>
-      <button onClick={() => onMove("done")}>Move to Done</button>
+
+      <Button color="danger" onClick={onDelete}>
+        Delete Me
+      </Button>
+      <Button color="primary" onClick={() => onMove("todo")}>
+        Move to ToDO
+      </Button>
+      <Button color="primary" onClick={() => onMove("doing")}>
+        Move to Doing
+      </Button>
+      <Button color="primary" onClick={() => onMove("done")}>
+        Move to Done
+      </Button>
     </li>
   );
 }
